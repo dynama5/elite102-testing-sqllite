@@ -31,6 +31,12 @@ def initialize_database():
     #     ('Charlie', 15, '9th', 3.2),
     #     ('Zac', 28, '10th', 3.2)
     # ''')
+
+    print("\n--- Querying Specific Columns (Name and Age) ---")
+    cursor.execute("SELECT name, age FROM students")
+    name_age = cursor.fetchall()
+    for row in name_age:
+        print(f"Name: {row[0]}, Age: {row[1]}")
     print("Sample data inserted.")
     # Commit the changes and close the connection
     print("Committing changes and closing the connection...")
